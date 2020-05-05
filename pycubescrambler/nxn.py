@@ -164,7 +164,7 @@ def get4():
   usedmoves=[]
   usedmoves1=[]
 
-  for i in range(15):
+  for i in range(20):
                             
     if i % 2 ==0:
       randmoves=random.choice(moves)
