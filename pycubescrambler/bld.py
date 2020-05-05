@@ -88,7 +88,7 @@ def get4():
   usedmoves=[]
   usedmoves1=[]
 
-  for i in range(40):
+  for i in range(25):
                     
     if i % 2 ==0:
       randmoves=random.choice(wide_turns)
@@ -131,6 +131,12 @@ def get4():
           randmoves=random.choice(wide_turns)
         while randmoves=="Uw" and scramble[-4]=="Uw" and scramble[-2]=="D":
           randmoves=random.choice(wide_turns)
+        while randmoves=="D" and scramble[-4]=="Uw" and scramble[-2]=="D":
+          randmoves=random.choice(wide_turns)
+        while randmoves=="B" and scramble[-4]=="Fw" and scramble[-2]=="B":
+          randmoves=random.choice(wide_turns)
+        while randmoves=="L" and scramble[-4]=="Rw" and scramble[-2]=="L":
+          randmoves=random.choice(wide_turns)
         while randmoves=="Uw" and scramble[-4]=="D" and scramble[-2]=="U":
           randmoves=random.choice(wide_turns)  
         while randmoves=="Uw" and scramble[-4]=="U" and scramble[-2]=="D":
@@ -167,8 +173,13 @@ def get4():
           randmoves=random.choice(wide_turns)
         while randmoves=="B" and scramble[-4]=="Fw" and scramble[-2]=="F":
           randmoves=random.choice(wide_turns)
-          
-        
+        while randmoves=="Fw" and scramble[-4]=="Fw" and scramble[-2]=="F":
+          randmoves=random.choice(wide_turns)
+        while randmoves=="Rw" and scramble[-4]=="Rw" and scramble[-2]=="R":
+          randmoves=random.choice(wide_turns)
+        while randmoves=="Uw" and scramble[-4]=="Uw" and scramble[-2]=="U":
+          randmoves=random.choice(wide_turns)
+
       usedmoves.append(randmoves)
       scramble.append(randmoves)
       scramble.append(random.choice(turns))
@@ -251,6 +262,18 @@ def get4():
         while randmoves1=="B" and scramble[-4]=="F" and scramble[-2]=="Fw":
           randmoves1=random.choice(wide_turns)
         while randmoves1=="B" and scramble[-4]=="Fw" and scramble[-2]=="F":
+          randmoves1=random.choice(wide_turns)
+        while randmoves1=="B" and scramble[-4]=="Fw" and scramble[-2]=="B":
+          randmoves1=random.choice(wide_turns)
+        while randmoves1=="L" and scramble[-4]=="Rw" and scramble[-2]=="L":
+          randmoves1=random.choice(wide_turns)
+        while randmoves1=="D" and scramble[-4]=="Uw" and scramble[-2]=="D":
+          randmoves1=random.choice(wide_turns)
+        while randmoves1=="Uw" and scramble[-4]=="Uw" and scramble[-2]=="U":
+          randmoves1=random.choice(wide_turns)
+        while randmoves1=="Rw" and scramble[-4]=="Rw" and scramble[-2]=="R":
+          randmoves1=random.choice(wide_turns)
+        while randmoves1=="Fw" and scramble[-4]=="Fw" and scramble[-2]=="F":
           randmoves1=random.choice(wide_turns)
       scramble.append(randmoves1)
       usedmoves1.append(randmoves1)
