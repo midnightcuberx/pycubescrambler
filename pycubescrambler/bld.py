@@ -88,7 +88,7 @@ def get4():
   usedmoves=[]
   usedmoves1=[]
 
-  for i in range(25):
+  for i in range(45):
                     
     if i % 2 ==0:
       randmoves=random.choice(wide_turns)
