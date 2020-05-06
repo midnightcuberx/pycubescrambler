@@ -21,3 +21,5 @@ scramble=side.get_skewb()
 print(scramble)
 
 #prints a skewb scramble, all of the side events are get_event name for example get_pyra() get_clock() get_mega()
+
+fmc is nxn.get_fmc()
