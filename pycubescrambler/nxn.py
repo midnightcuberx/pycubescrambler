@@ -1,5 +1,87 @@
 import random
 
+def get_fmc():
+  def main_scram():
+    moves = ["F","B","R","L","U","D"]
+    turns = [" ","2 ","' "]
+    scramble = []
+    usedmoves=[]
+    usedmoves1=[]
+    for i in range(20):
+                              
+      if i % 2 ==0:
+        randmoves=random.choice(moves)
+        if i>1:                      
+          while randmoves=="F" and scramble[-4]=="F" and scramble[-2]=="B":
+            randmoves=random.choice(moves)
+          while randmoves=="B" and scramble[-4]=="B" and scramble[-2]=="F":
+            randmoves=random.choice(moves)
+          while randmoves=="R" and scramble[-4]=="R" and scramble[-2]=="L":
+            randmoves=random.choice(moves)
+          while randmoves=="L" and scramble[-4]=="L" and scramble[-2]=="R":
+            randmoves=random.choice(moves)
+          while randmoves=="U" and scramble[-4]=="U" and scramble[-2]=="D":
+            randmoves=random.choice(moves)
+          while randmoves=="D" and scramble[-4]=="D" and scramble[-2]=="U":
+            randmoves=random.choice(moves)     
+        usedmoves.append(randmoves)
+        scramble.append(randmoves)
+        if i<=4:
+          ok=random.randint(1,3)
+          if ok!=1:
+            scramble.append("2 ")
+          else:
+            scramble.append(random.choice(turns))
+            
+        else:
+          scramble.append(random.choice(turns))
+        moves.remove(randmoves)
+        if i != 0:
+          moves.append(usedmoves1[-1])
+
+      else:
+                                  
+        randmoves1=random.choice(moves)
+        if i>1:
+          while randmoves1=="F" and scramble[-4]=="F" and scramble[-2]=="B":
+            randmoves1=random.choice(moves)
+          while randmoves=="B" and scramble[-4]=="B" and scramble[-2]=="F":
+            randmoves1=random.choice(moves)
+          while randmoves1=="R" and scramble[-4]=="R" and scramble[-2]=="L":
+            randmoves1=random.choice(moves)
+          while randmoves1=="L" and scramble[-4]=="L" and scramble[-2]=="R":
+            randmoves1=random.choice(moves)
+          while randmoves1=="U" and scramble[-4]=="U" and scramble[-2]=="D":
+            randmoves1=random.choice(moves)
+          while randmoves1=="D" and scramble[-4]=="D" and scramble[-2]=="U":
+            randmoves1=random.choice(moves) 
+        scramble.append(randmoves1)
+        usedmoves1.append(randmoves1)
+        scramble.append(random.choice(turns))
+        moves.remove(randmoves1)
+        moves.append(usedmoves[-1])
+    return "".join(scramble)
+  a=main_scram().split()
+  scramble=["R' ","U' ","F "]
+  list1=["R'","R","R2","L'","L2","L'"]
+  list2=["F","F'","F2","B","B2","B'"]
+  if a[0]=="F" or a[0]=="F2" or a[0]=="F'":
+    a.pop(0)
+  elif a[0] in list2 and a[1] in list2:
+    a.pop(1)
+  elif a[-1]=="R" or a[-1]=="R'" or a[-1]=="R2":
+    a.pop(-1) 
+  elif a[-1] in list1 and a[-2] in list1:
+    a.pop(-2)
+  elif a[-1]=="R" or a[-1]=="R'" or a[-1]=="R2":
+    a.pop(-1) 
+
+    
+  scramble.append(" ".join(a))
+
+  b="".join(scramble)+" R' U' F"
+  return b
+
 
 def get1():
   moves = ["x","y","z"]
@@ -29,68 +111,7 @@ def get1():
         moves.append(usedmoves[-1])
   return "".join(scramble)
 
-def get_fmc():
-  moves = ["F","B","R","L","U","D"]
-  turns = [" ","2 ","' "]
-  scramble = ["R","' ","U","' ","F"," "]
-  usedmoves=[]
-  usedmoves1=[]
-  for i in range(20):
-                            
-    if i % 2 ==0:
-      randmoves=random.choice(moves)                      
-      while randmoves=="F" and scramble[-4]=="F" and scramble[-2]=="B":
-        randmoves=random.choice(moves)
-      while randmoves=="B" and scramble[-4]=="B" and scramble[-2]=="F":
-        randmoves=random.choice(moves)
-      while randmoves=="R" and scramble[-4]=="R" and scramble[-2]=="L":
-        randmoves=random.choice(moves)
-      while randmoves=="L" and scramble[-4]=="L" and scramble[-2]=="R":
-        randmoves=random.choice(moves)
-      while randmoves=="U" and scramble[-4]=="U" and scramble[-2]=="D":
-        randmoves=random.choice(moves)
-      while randmoves=="D" and scramble[-4]=="D" and scramble[-2]=="U":
-        randmoves=random.choice(moves)     
-      usedmoves.append(randmoves)
-      scramble.append(randmoves)
-      if i<=4:
-        ok=random.randint(1,3)
-        if ok!=1:
-          scramble.append("2 ")
-        else:
-          scramble.append(random.choice(turns))
-          
-      else:
-        scramble.append(random.choice(turns))
-      moves.remove(randmoves)
-      if i != 0:
-        moves.append(usedmoves1[-1])
 
-    else:
-                                
-      randmoves1=random.choice(moves)
-      while randmoves1=="F" and scramble[-4]=="F" and scramble[-2]=="B":
-        randmoves1=random.choice(moves)
-      while randmoves=="B" and scramble[-4]=="B" and scramble[-2]=="F":
-        randmoves1=random.choice(moves)
-      while randmoves1=="R" and scramble[-4]=="R" and scramble[-2]=="L":
-        randmoves1=random.choice(moves)
-      while randmoves1=="L" and scramble[-4]=="L" and scramble[-2]=="R":
-        randmoves1=random.choice(moves)
-      while randmoves1=="U" and scramble[-4]=="U" and scramble[-2]=="D":
-        randmoves1=random.choice(moves)
-      while randmoves1=="D" and scramble[-4]=="D" and scramble[-2]=="U":
-        randmoves1=random.choice(moves) 
-      if i==19:
-        while randmoves1=="F":
-          randmoves1=random.choice(moves)
-      scramble.append(randmoves1)
-      usedmoves1.append(randmoves1)
-      scramble.append(random.choice(turns))
-      moves.remove(randmoves1)
-      moves.append(usedmoves[-1])
-  scramble.append("F' U R")
-  return "".join(scramble)
 
 
 def get2(): 
