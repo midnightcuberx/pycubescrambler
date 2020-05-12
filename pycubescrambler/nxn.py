@@ -11,7 +11,11 @@ def get_fmc():
                               
       if i % 2 ==0:
         randmoves=random.choice(moves)
-        if i>1:                      
+        if i==0:
+          while randmoves=="F":
+            randmoves=random.choice(moves)
+            
+        elif i>1:                      
           while randmoves=="F" and scramble[-4]=="F" and scramble[-2]=="B":
             randmoves=random.choice(moves)
           while randmoves=="B" and scramble[-4]=="B" and scramble[-2]=="F":
@@ -42,7 +46,11 @@ def get_fmc():
       else:
                                   
         randmoves1=random.choice(moves)
-        if i>1:
+        if i==1:
+          while scramble[-2]=="B" and randmoves1=="F":
+            randmoves1=random.choice(moves)
+          
+        elif i>1:
           while randmoves1=="F" and scramble[-4]=="F" and scramble[-2]=="B":
             randmoves1=random.choice(moves)
           while randmoves=="B" and scramble[-4]=="B" and scramble[-2]=="F":
