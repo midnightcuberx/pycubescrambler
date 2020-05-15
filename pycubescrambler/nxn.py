@@ -288,8 +288,10 @@ def get4():
       randmoves=random.choice(wide_turns)
       if randmoves in moves and scramble[-2] in moves and scramble[-4] in moves:
         randmoves=random.choice(wide_turns)
-
-      while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+      if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+        while randmoves==scramble[-4]:
+          randmoves=random.choice(moves)
+      while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
         randmoves=random.choice(wide_turns)
       usedmoves.append(randmoves)
       scramble.append(randmoves)
@@ -301,9 +303,12 @@ def get4():
       randmoves1=random.choice(wide_turns)
       if randmoves1 in moves and scramble[-2] in moves and scramble[-4] in moves:
         randmoves1=random.choice(wide_turns)
+      if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+        while randmoves1==scramble[-4]:
+          randmoves1=random.choice(moves)
       while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
         randmoves1=random.choice(wide_turns)
-
+  
       scramble.append(randmoves1)
       usedmoves1.append(randmoves1)
       scramble.append(random.choice(turns))
@@ -327,9 +332,11 @@ def get5():
     if i % 2 ==0:
       randmoves=random.choice(moves)
       if i>1:
-        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
           randmoves=random.choice(moves)
-
       usedmoves.append(randmoves)
       scramble.append(randmoves)
       scramble.append(random.choice(turns))
@@ -341,8 +348,11 @@ def get5():
       randmoves1=random.choice(moves)
       if i>2:
         randmoves1=random.choice(moves)
-        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
-          randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
 
 
       scramble.append(randmoves1)
@@ -351,6 +361,7 @@ def get5():
       moves.remove(randmoves1)
       moves.append(usedmoves[-1])
   return "".join(scramble)
+
 
 
 
@@ -369,9 +380,11 @@ def get6():
     if i % 2 ==0:
       randmoves=random.choice(moves)
       if i>1:
-        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
           randmoves=random.choice(moves)
-
       usedmoves.append(randmoves)
       scramble.append(randmoves)
       scramble.append(random.choice(turns))
@@ -383,8 +396,11 @@ def get6():
       randmoves1=random.choice(moves)
       if i>2:
         randmoves1=random.choice(moves)
-        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
-          randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
 
 
       scramble.append(randmoves1)
@@ -393,6 +409,7 @@ def get6():
       moves.remove(randmoves1)
       moves.append(usedmoves[-1])
   return "".join(scramble)
+
 
 
 def get7():
@@ -409,7 +426,10 @@ def get7():
     if i % 2 ==0:
       randmoves=random.choice(moves)
       if i>1:
-        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
           randmoves=random.choice(moves)
       usedmoves.append(randmoves)
       scramble.append(randmoves)
@@ -422,8 +442,11 @@ def get7():
       randmoves1=random.choice(moves)
       if i>2:
         randmoves1=random.choice(moves)
-        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
-          randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
 
 
       scramble.append(randmoves1)
@@ -433,3 +456,268 @@ def get7():
       moves.append(usedmoves[-1])
   return "".join(scramble)
 
+
+def get8():
+  moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw"]
+  turns = [" ","2 ","' "]
+  scramble = []
+  usedmoves=[]
+  usedmoves1=[]
+  list1=["U","D","Uw","Dw","3Uw","3Dw","4Uw"]
+  list2=["R","L","Lw","Rw","3Rw","3Lw","4Rw"]
+  list3=["F","B","Fw","Bw","3Fw","3Bw","4Fw"]
+  for i in range(120):
+                
+    if i % 2 ==0:
+      randmoves=random.choice(moves)
+      if i>1:
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves=random.choice(moves)
+      usedmoves.append(randmoves)
+      scramble.append(randmoves)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves)
+      if i != 0:
+        moves.append(usedmoves1[-1])
+
+    else:
+      randmoves1=random.choice(moves)
+      if i>2:
+        randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
+
+
+      scramble.append(randmoves1)
+      usedmoves1.append(randmoves1)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves1)
+      moves.append(usedmoves[-1])
+  return "".join(scramble)
+
+def get8():
+  moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw"]
+  turns = [" ","2 ","' "]
+  scramble = []
+  usedmoves=[]
+  usedmoves1=[]
+  list1=["U","D","Uw","Dw","3Uw","3Dw","4Uw"]
+  list2=["R","L","Lw","Rw","3Rw","3Lw","4Rw"]
+  list3=["F","B","Fw","Bw","3Fw","3Bw","4Fw"]
+  for i in range(120):
+                
+    if i % 2 ==0:
+      randmoves=random.choice(moves)
+      if i>1:
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves=random.choice(moves)
+      usedmoves.append(randmoves)
+      scramble.append(randmoves)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves)
+      if i != 0:
+        moves.append(usedmoves1[-1])
+
+    else:
+      randmoves1=random.choice(moves)
+      if i>2:
+        randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
+
+
+      scramble.append(randmoves1)
+      usedmoves1.append(randmoves1)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves1)
+      moves.append(usedmoves[-1])
+  return "".join(scramble)
+
+def get8():
+  moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw"]
+  turns = [" ","2 ","' "]
+  scramble = []
+  usedmoves=[]
+  usedmoves1=[]
+  list1=["U","D","Uw","Dw","3Uw","3Dw","4Uw"]
+  list2=["R","L","Lw","Rw","3Rw","3Lw","4Rw"]
+  list3=["F","B","Fw","Bw","3Fw","3Bw","4Fw"]
+  for i in range(120):
+                
+    if i % 2 ==0:
+      randmoves=random.choice(moves)
+      if i>1:
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves=random.choice(moves)
+      usedmoves.append(randmoves)
+      scramble.append(randmoves)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves)
+      if i != 0:
+        moves.append(usedmoves1[-1])
+
+    else:
+      randmoves1=random.choice(moves)
+      if i>2:
+        randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
+
+
+      scramble.append(randmoves1)
+      usedmoves1.append(randmoves1)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves1)
+      moves.append(usedmoves[-1])
+  return "".join(scramble)
+
+
+def get9():
+  moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw","4Dw","4Lw","4Bw"]
+  turns = [" ","2 ","' "]
+  scramble = []
+  usedmoves=[]
+  usedmoves1=[]
+  list1=["U","D","Uw","Dw","3Uw","3Dw","4Uw","4Dw"]
+  list2=["R","L","Lw","Rw","3Rw","3Lw","4Rw","4Lw"]
+  list3=["F","B","Fw","Bw","3Fw","3Bw","4Fw","4Bw"]
+  for i in range(120):
+                
+    if i % 2 ==0:
+      randmoves=random.choice(moves)
+      if i>1:
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves=random.choice(moves)
+      usedmoves.append(randmoves)
+      scramble.append(randmoves)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves)
+      if i != 0:
+        moves.append(usedmoves1[-1])
+
+    else:
+      randmoves1=random.choice(moves)
+      if i>2:
+        randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
+
+
+      scramble.append(randmoves1)
+      usedmoves1.append(randmoves1)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves1)
+      moves.append(usedmoves[-1])
+  return "".join(scramble)
+
+def get10():
+  moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw","4Dw","4Lw","4Bw","5Rw","5Fw","5Uw"]
+  turns = [" ","2 ","' "]
+  scramble = []
+  usedmoves=[]
+  usedmoves1=[]
+  list1=["U","D","Uw","Dw","3Uw","3Dw","4Uw","4Dw","5Uw"]
+  list2=["R","L","Lw","Rw","3Rw","3Lw","4Rw","4Lw","5Rw"]
+  list3=["F","B","Fw","Bw","3Fw","3Bw","4Fw","4Bw","5Fw"]
+  for i in range(120):
+                
+    if i % 2 ==0:
+      randmoves=random.choice(moves)
+      if i>1:
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves=random.choice(moves)
+      usedmoves.append(randmoves)
+      scramble.append(randmoves)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves)
+      if i != 0:
+        moves.append(usedmoves1[-1])
+
+    else:
+      randmoves1=random.choice(moves)
+      if i>2:
+        randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
+
+
+      scramble.append(randmoves1)
+      usedmoves1.append(randmoves1)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves1)
+      moves.append(usedmoves[-1])
+  return "".join(scramble)
+
+def get11():
+  moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw","4Dw","4Lw","4Bw","5Rw","5Fw","5Uw","5Dw","5Lw","5Bw"]
+  turns = [" ","2 ","' "]
+  scramble = []
+  usedmoves=[]
+  usedmoves1=[]
+  list1=["U","D","Uw","Dw","3Uw","3Dw","4Uw","4Dw","5Uw","5Dw"]
+  list2=["R","L","Lw","Rw","3Rw","3Lw","4Rw","4Lw","5Rw","5Lw"]
+  list3=["F","B","Fw","Bw","3Fw","3Bw","4Fw","4Bw","5Fw","5Bw"]
+  for i in range(120):
+                
+    if i % 2 ==0:
+      randmoves=random.choice(moves)
+      if i>1:
+        if (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves==scramble[-4]:
+            randmoves=random.choice(moves)
+        while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves=random.choice(moves)
+      usedmoves.append(randmoves)
+      scramble.append(randmoves)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves)
+      if i != 0:
+        moves.append(usedmoves1[-1])
+
+    else:
+      randmoves1=random.choice(moves)
+      if i>2:
+        randmoves1=random.choice(moves)
+        if (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):
+          while randmoves1==scramble[-4]:
+            randmoves1=random.choice(moves) 
+        while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1 and scramble[-6] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2 and scramble[-6] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3 and scramble[-6] in list3):
+          randmoves1=random.choice(moves)         
+
+
+      scramble.append(randmoves1)
+      usedmoves1.append(randmoves1)
+      scramble.append(random.choice(turns))
+      moves.remove(randmoves1)
+      moves.append(usedmoves[-1])
+  return "".join(scramble)
