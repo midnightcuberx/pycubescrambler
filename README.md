@@ -1,25 +1,65 @@
-# pycubescrambler
-A scrambling module that generates scrambles for most wca events
-example:
-
 from pycubescrambler import nxn,side,bld
 
+#gets 1x1 scramble and prints it out
+scramble=nxn.get1()
+print(scramble)
+
+#gets 2x2 scramble and prints it out
+scramble=nxn.get2()
+print(scramble)
+
+#gets 3x3 scramble and prints it out
 scramble=nxn.get3()
-
 print(scramble)
 
-#will display 3x3 scramble; 2-7 are supported and all work get2() get4() etc
-
-scramble=bld.get3()
-
+#gets 4x4 scramble and prints it out
+scramble=nxn.get4()
 print(scramble)
 
-#prints a 3bld scramble 4 and 5bld are get4() and get5()
+#gets 5x5 scramble and prints it out
+scramble=nxn.get5()
+print(scramble)
 
+#gets 6x6 scramble and prints it out
+scramble=nxn.get6()
+print(scramble)
+
+#gets 7x7 scramble and prints it out
+scramble=nxn.get7()
+print(scramble)
+
+#gets a big cube of size 100 (100x100)
+scramble=nxn.get_big_cube(100)
+print(scramble)
+
+#gets fmc scramble and prints it out
+scramble=nxn.get_fmc()
+print(scramble)
+
+#gets skewb scramble and prints it out
 scramble=side.get_skewb()
-
 print(scramble)
 
-#prints a skewb scramble, all of the side events are get_event name for example get_pyra() get_clock() get_mega()
+#gets pyraminx scramble and prints it out
+scramble=side.get_pyra()
+print(scramble)
 
-fmc is nxn.get_fmc()
+#gets clock scramble and prints it out
+scramble=side.get_clock()
+print(scramble)
+
+#gets megaminx scramble and prints it out
+scramble=side.get_mega()
+print(scramble)
+
+#gets 3bld scramble and prints it out
+scramble=bld.get3()
+print(scramble)
+
+#gets 4bld scramble and prints it out
+scramble=bld.get4()
+print(scramble)
+
+#gets 5bld scramble and prints it out
+scramble=bld.get5()
+print(scramble)
