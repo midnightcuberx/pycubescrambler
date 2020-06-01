@@ -3,7 +3,7 @@ import random
 def get_fmc():
   def main_scram():
     moves = ["F","B","R","L","U","D"]
-    turns = [" ","2 ","' "]
+    turns = [" ","2 ","' ","2 "]
     scramble = []
     usedmoves=[]
     usedmoves1=[]
@@ -30,15 +30,9 @@ def get_fmc():
             randmoves=random.choice(moves)     
         usedmoves.append(randmoves)
         scramble.append(randmoves)
-        if i<=4:
-          ok=random.randint(1,3)
-          if ok!=1:
-            scramble.append("2 ")
-          else:
-            scramble.append(random.choice(turns))
             
-        else:
-          scramble.append(random.choice(turns))
+
+        scramble.append(random.choice(turns))
         moves.remove(randmoves)
         if i != 0:
           moves.append(usedmoves1[-1])
@@ -69,26 +63,39 @@ def get_fmc():
         moves.remove(randmoves1)
         moves.append(usedmoves[-1])
     return "".join(scramble)
+
   a=main_scram().split()
-  scramble=["R' ","U' ","F "]
-  list1=["R'","R","R2","L'","L2","L'"]
-  list2=["F","F'","F2","B","B2","B'"]
-  if a[0]=="F" or a[0]=="F2" or a[0]=="F'":
-    a.pop(0)
-  elif a[0] in list2 and a[1] in list2:
-    a.pop(1)
-  elif a[-1]=="R" or a[-1]=="R'" or a[-1]=="R2":
-    a.pop(-1) 
-  elif a[-1] in list1 and a[-2] in list1:
-    a.pop(-2)
-  elif a[-1]=="R" or a[-1]=="R'" or a[-1]=="R2":
-    a.pop(-1) 
+  list1=["F","F2","F'","B'","B2","B"]
+  list2=["R2","R","R'","L","L'","L2"]
+  list3=["F","F2","F'"]
+  list4=["R2","R","R'"]
+  times=0
+  while (a[0] in list1 and a[1] in list1) or (a[0] in list3) or (a[-1] in list2 and a[-2] in list2) or (a[-1] in list4):
+    if times>3:
+      a=main_scram.split()
+      times=0
+
+    if a[0] in list3:
+      a.remove(a[0])
+      times+=1
+
+    if (a[0] in list1 and a[1] in list1):
+      if a[0] not in list3:
+        a.remove(a[1])
+        times+=1
 
     
-  scramble.append(" ".join(a))
+    if a[-1] in list4:
+      a.remove(a[-1])
+      times+=1
+    
+    if (a[-1] in list2 and a[-2] in list2):
+      if a[-1] not in list4:
+        a.remove(a[-2])
+        times+=1
 
-  b="".join(scramble)+" R' U' F"
-  return b
+  scramble="R' U' F " + " ".join(a) + " R' U' F"
+  return scramble
 
 
 def get1():
@@ -124,7 +131,7 @@ def get1():
 
 def get2(): 
   moves = ["F","R","U"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -154,7 +161,7 @@ def get2():
 
 def get3():
   moves = ["F","B","R","L","U","D"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -217,7 +224,7 @@ def get3():
 def get4():
   moves = ["F","B","R","L","U","D"]
   wide_turns=["F","Fw","B","R","Rw","L","D","U","Uw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -320,7 +327,7 @@ def get4():
 
 def get5():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -369,7 +376,7 @@ def get5():
 
 def get6():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -416,7 +423,7 @@ def get6():
 
 def get7():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -462,7 +469,7 @@ def get7():
 
 def get8():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -507,7 +514,7 @@ def get8():
 
 def get8():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -552,7 +559,7 @@ def get8():
 
 def get8():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -598,7 +605,7 @@ def get8():
 
 def get9():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw","4Dw","4Lw","4Bw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -643,7 +650,7 @@ def get9():
 
 def get10():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw","4Dw","4Lw","4Bw","5Rw","5Fw","5Uw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -688,7 +695,7 @@ def get10():
 
 def get11():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw","3Uw","3Rw","3Fw","3Bw","3Dw","3Lw","4Uw","4Rw","4Fw","4Dw","4Lw","4Bw","5Rw","5Fw","5Uw","5Dw","5Lw","5Bw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -734,7 +741,7 @@ def get11():
 
 def get_big_cube(n=12):
   moves = ["F","B","R","L","U","D","Uw","Dw","Fw","Bw","Rw","Lw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   moveslist = ["F","B","R","L","U","D"]
   scramble = []
   usedmoves=[]
