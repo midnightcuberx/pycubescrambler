@@ -3,7 +3,7 @@ import random
 def get3():
   colours=["white","yellow","red","orange","green","blue"]
   moves = ["F","B","R","L","U","D"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -86,7 +86,7 @@ def get3():
 def get4():
   moves = ["F","B","R","L","U","D"]
   wide_turns=["F","Fw","B","R","Rw","L","D","U","Uw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
@@ -184,7 +184,7 @@ def get4():
 
 def get5():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw"]
-  turns = [" ","2 ","' "]
+  turns = [" ","2 ","' ","2 "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
