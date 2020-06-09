@@ -55,29 +55,11 @@ def get3():
       scramble.append(random.choice(turns))
       moves.remove(randmoves1)
       moves.append(usedmoves[-1])
-  cprob=random.randint(1,10)
-  if cprob==3:
-    moves12=["Uw", "Uw'","Uw2"]
-    scramble.append(random.choice(moves12))
-  else:
-    colour=random.choice(colours)
-    if colour=="yellow":
-      scramble.append("Rw2 ")
-    elif colour=="green":
-      scramble.append("Rw ")
-    elif colour=="blue":
-      scramble.append("Rw' ")
-    elif colour=="red":
-      scramble.append("Fw' ")
-    elif colour=="orange":
-      scramble.append("Fw ")
-    chance=random.randint(1,12)
-    if chance==3:
-      scramble.append("Uw ")
-    elif chance==6:
-      scramble.append("Uw' ")
-    elif chance==9:
-      scramble.append("Uw2 ")
+  possi=["","Rw ","Rw' ","Rw2 ","Fw ","Fw2 ","Fw' "]
+  possi2=["Uw","Uw'","Uw2",""]
+  scramble.append(random.choice(possi))
+  scramble.append(random.choice(possi2))
+  
 
   return "".join(scramble)
 
@@ -184,7 +166,7 @@ def get4():
 
 def get5():
   moves = ["F","Fw","B","Bw","R","Rw","L","Lw","D","Dw","U","Uw"]
-  turns = [" ","2 ","' ","2 "]
+  turns = [" ","2 ","' "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
