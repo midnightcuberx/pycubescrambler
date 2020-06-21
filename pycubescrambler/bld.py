@@ -1,5 +1,5 @@
 import random
-from scrambles import nnn
+import nnn
 
 def get3():
   
