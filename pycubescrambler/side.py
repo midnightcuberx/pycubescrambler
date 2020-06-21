@@ -1,4 +1,4 @@
-from scrambles import sides
+import side
 def get_clock():
   scramble=sides.get_clock()
   return scramble
