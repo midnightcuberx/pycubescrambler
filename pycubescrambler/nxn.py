@@ -1,4 +1,4 @@
-from scrambles import nnn
+import nnn
 
 def get_fmc():
   a=nnn.get3().split()
