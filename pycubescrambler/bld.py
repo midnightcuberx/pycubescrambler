@@ -97,15 +97,7 @@ def get4():
           randmoves=random.choice(moves)     
       usedmoves.append(randmoves)
       scramble.append(randmoves)
-      if i<=4:
-        ok=random.randint(1,3)
-        if ok!=1:
-          scramble.append("2 ")
-        else:
-          scramble.append(random.choice(turns))
-          
-      else:
-        scramble.append(random.choice(turns))
+      scramble.append(random.choice(turns))
       moves.remove(randmoves)
       if i != 0:
         moves.append(usedmoves1[-1])
