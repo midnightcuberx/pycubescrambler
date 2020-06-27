@@ -109,41 +109,18 @@ def get_pyra():
   scramble = []
   usedmoves=[]
   usedmoves1=[]
+
   def sort_tips():
+
     tips=["l","r","b","u"]
     tip=[]
-    tip1=["l","r","b"]
-    tip2=["l","r","u"]
-    tip3=["r","b","u"]
-    tip4=["l","b","u"]
-    tip21=["l","r"]
-    tip22=["l","b"]
-    tip23=["l","u"]
-    tip24=["r","b"]
-    tip25=["r","u"]
-    tip26=["u","b"]
-    tips2=[tip21,tip22,tip23,tip24,tip25,tip26]
-    tips3=[tip1,tip2,tip3,tip4]
-    length=random.randint(1,4)
-    if length==4:
-      for i in range(4):
+    
+    for i in range(4):
+      number=random.randint(1,2)
+      if number==1:
         tip.append(tips[i])
         tip.append(random.choice(turns))
-    elif length==3:
-      choice=random.choice(tips3)
-      for i in range(3):
-        tip.append(choice[i])
-        tip.append(random.choice(turns))
-    
-    elif length==2:
-      choice=random.choice(tips2)
-      for i in range(2):
-        tip.append(choice[i])
-        tip.append(random.choice(turns))
-      
-    elif length==1:
-      tip.append(random.choice(tips))
-      tip.append(random.choice(turns))
+
     return "".join(tip)
 
 
@@ -167,6 +144,7 @@ def get_pyra():
         scramble.append(random.choice(turns))
         moves.remove(randmoves1)
         moves.append(usedmoves[-1])
+
   thetips=sort_tips()
   scramble.append(thetips)
   return "".join(scramble)
