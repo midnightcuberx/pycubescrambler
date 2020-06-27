@@ -1,58 +1,27 @@
 import random
 
 def get_clock():
-  moves = ["0+","1+","2+","3+","4+","5+","6+","1-","2-","3-","4-","5-"]
-  pinOrder = ["UR","DR","DL","UL","U","R","D","L","ALL","U","R","D","L","ALL"]
-  last4pins = ["UR", "DR", "DL", "UL"]
-
-  finalScramble = []
+  moves = ["0+ ","1+ ","2+ ","3+ ","4+ ","5+ ","6+ ","1- ","2- ","3- ","4- ","5- "]
+  pins = ["UR","DR","DL","UL","U","R","D","L","ALL","U","R","D","L","ALL"]
+  scramble = []
 
   for i in range(14):
-      finalScramble.append(pinOrder[i])
-      finalScramble.append(random.choice(moves))
-      finalScramble.append(" ")
-
+      scramble.append(pins[i])
+      scramble.append(random.choice(moves))
 
   def sort_l4m():
     l4m=["UR ","DR ","DL ","UL "]
     l4ms=[]
-    l3m1=["UR ","DR ","DL "]
-    l3m2=["UR ","DR ","UL "]
-    l3m3=["DR ","DL ","UL "]
-    l3m4=["UR ","DL ","UL "]
-    l2m1=["UR ","DR "]
-    l2m2=["UR ","DL "]
-    l2m3=["UR ","UL "]
-    l2m4=["DR ","DL "]
-    l2m5=["DR ","UL "]
-    l2m6=["DL ","UL "]
-    l4m2=[l2m1,l2m2,l2m3,l2m4,l2m5,l2m6]
-    l4m3=[l3m1,l3m2,l3m3,l3m4]
-    length=random.randint(0,4)
-    if length==4:
-      for i in range(4):
+    for i in range(4):
+      number=random.randint(1,2)
+      if number==1:
         l4ms.append(l4m[i])
-    elif length==3:
-      for i in range(3):
-        choice=random.choice(l4m3)
-        l4ms.append(choice[i])
-
-    elif length==2:
-      for i in range(2):
-        choice=random.choice(l4m2)
-        l4ms.append(choice[i])
-      
-    elif length==1:
-      l4ms.append(random.choice(l4m))
-    elif length==0:
-      l4ms.append("")
     return "".join(l4ms)
 
   last4=sort_l4m()
-  finalScramble.append(last4)
+  scramble.append(last4)
 
-
-  return "".join(finalScramble)
+  return "".join(scramble)
   
 
 def get_skewb():
