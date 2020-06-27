@@ -1,4 +1,4 @@
-from pycubescrambler import nxn,side,bld
+from pycubescrambler import *
 
 #gets 1x1 scramble and prints it out
 scramble=nxn.get1()
@@ -26,6 +26,10 @@ print(scramble)
 
 #gets 7x7 scramble and prints it out
 scramble=nxn.get7()
+print(scramble)
+
+#gets a big cube of size 100 (100x100)
+scramble=nxn.get_big_cube(100)
 print(scramble)
 
 #gets fmc scramble and prints it out
