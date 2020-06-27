@@ -1,4 +1,4 @@
-from pycubescrambler import nxn,side,bld
+from pycubescrambler import *
 
 #gets 1x1 scramble and prints it out
 scramble=nxn.get1()
