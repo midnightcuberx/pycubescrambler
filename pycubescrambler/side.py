@@ -86,41 +86,21 @@ def get_skewb():
 
 def get_mega():
   turns=["-- ","++ "]
-  U=["U' ","U "]
+  umoves=["U'","U"]
+  scramble=[]
   for i in range(7):
-    scramble=[]
-    for y in range(10):
-      if y % 2 ==0:
-        scramble.append("R")
-        scramble.append(random.choice(turns))
+    scrambles=[]
+    for x in range(5):
+      for y in range(2):
+        if y==0:
+          scrambles.append("R")
+        else:
+          scrambles.append("D")
+        scrambles.append(random.choice(turns))
+    scrambles.append(random.choice(umoves))
+    scramble.append("".join(scrambles))
+  return "\n".join(scramble)
 
-      else:
-        scramble.append("D")
-        scramble.append(random.choice(turns))
-    scramble.append(random.choice(U))
-    if i == 0:
-      a="".join(scramble)
-    elif i ==1:
-      b = "".join(scramble)
-    elif i ==2:
-      c="".join(scramble)
-    elif i ==3:
-      d="".join(scramble)
-    elif i==4:
-      e="".join(scramble)
-    elif i ==5:
-      f="".join(scramble)
-    elif i ==6:
-      g="".join(scramble)
-
-  return"""
-{}
-{}
-{}
-{}
-{}
-{}
-{}""".format(a,b,c,d,e,f,g)
 
 def get_pyra():
   y=random.randint(8,10)
