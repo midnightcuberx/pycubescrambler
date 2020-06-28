@@ -6,9 +6,9 @@ class main():
     scramble = []	
     usedmoves=[]	
     usedmoves1=[]	
-    list1=["F","B","Fw"]	
-    list2=["R","L","Rw"]	
-    list3=["D","U","Uw"]	
+    list1=["F","B"]	
+    list2=["R","L"]	
+    list3=["D","U"]	
     for i in range(20):	
 
       if i % 2 ==0:	
