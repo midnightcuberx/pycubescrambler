@@ -1,4 +1,4 @@
-from pycubescrambler import nxn,side,bld
+from pycubescrambler import nxn,side,bld,non
 
 #gets 1x1 scramble and prints it out
 
@@ -94,5 +94,11 @@ print(scramble)
 #gets 5bld scramble and prints it out
 
 scramble=bld.get5()
+
+print(scramble)
+
+#gets ivy cubescramble
+
+scramble=non.get_ivy()
 
 print(scramble)
