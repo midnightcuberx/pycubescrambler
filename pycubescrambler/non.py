@@ -42,10 +42,7 @@ def get223():
         if i % 2 == 0:
             randmoves = random.choice(double_moves)
             scramble.append(randmoves)
-            turn = random.choice(turns)
-
-            while turn != "2 ":
-                turn = random.choice(turns)
+            turn ="2 "
 
             scramble.append(turn)
         else:
