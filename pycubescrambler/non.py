@@ -51,3 +51,21 @@ def get223():
             scramble.append(random.choice(turns))
 
     return "".join(scramble)
+def get_kilo():
+  turns=["-- ","++ "]
+  umoves=["U'","U"]
+  scramble=[]
+  for i in range(4):
+    scrambles=[]
+    for x in range(5):
+      for y in range(2):
+        if y==0:
+          scrambles.append("R")
+        else:
+          scrambles.append("D")
+        scrambles.append(random.choice(turns))
+    scrambles.append(random.choice(umoves))
+    if i!=3:
+      scrambles.append(" x2 ")
+    scramble.append("".join(scrambles))
+  return "\n".join(scramble)
