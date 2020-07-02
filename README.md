@@ -97,8 +97,20 @@ scramble=bld.get5()
 
 print(scramble)
 
-#gets ivy cubescramble
+#gets ivy cube scramble and prints it out
 
 scramble=non.get_ivy()
+
+print(scramble)
+
+#gets 2x2x3 scrambleand prints it out
+
+scramble=non.get223
+
+print(scramble)
+
+#gets Kilominx scramble and prints it out
+
+scramble=non.get_kilo
 
 print(scramble)
