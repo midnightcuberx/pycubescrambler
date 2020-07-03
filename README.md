@@ -103,14 +103,14 @@ scramble=non.get_ivy()
 
 print(scramble)
 
-#gets 2x2x3 scrambleand prints it out
+#gets 2x2x3 scramble and prints it out
 
-scramble=non.get223
+scramble=non.get223()
 
 print(scramble)
 
 #gets Kilominx scramble and prints it out
 
-scramble=non.get_kilo
+scramble=non.get_kilo()
 
 print(scramble)
