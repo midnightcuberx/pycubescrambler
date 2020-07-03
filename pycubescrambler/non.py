@@ -69,3 +69,24 @@ def get_kilo():
       scrambles.append(" x2 ")
     scramble.append("".join(scrambles))
   return "\n".join(scramble)
+
+
+def get_redi():
+    turns = [" ", "' "]
+    scramble = []
+
+    for i in range(8):
+        scrambles = []
+        num_moves = random.randint(2, 5)
+        for x in range(num_moves):
+            for y in range(2):
+                if y == 0:
+                    scrambles.append("R")
+                else:
+                    scrambles.append("L")
+                scrambles.append(random.choice(turns))
+        if i != 7:
+            scrambles.append("x")
+        scramble.append("".join(scrambles))
+
+    return "\n".join(scramble)
