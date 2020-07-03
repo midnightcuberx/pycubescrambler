@@ -51,6 +51,8 @@ def get223():
             scramble.append(random.choice(turns))
 
     return "".join(scramble)
+
+
 def get_kilo():
   turns=["-- ","++ "]
   umoves=["U'","U"]
@@ -90,3 +92,32 @@ def get_redi():
         scramble.append("".join(scrambles))
 
     return "\n".join(scramble)
+
+def get113():
+    moves = ["B", "F", "R", "L"]
+    turns = ["' ", " "]
+    usedmoves = []
+    usedmoves1 = []
+    num_moves = random.randint(3, 6)
+    scramble = []
+
+    for i in range(num_moves):
+        if i % 2 == 0:
+            randmoves = random.choice(moves)
+            scramble.append(randmoves)
+            scramble.append(random.choice(turns))
+            usedmoves.append(randmoves)
+            moves.remove(randmoves)
+
+            if i != 0:
+                moves.append(usedmoves1[-1])
+
+        else:
+            randmoves1 = random.choice(moves)
+            scramble.append(randmoves1)
+            scramble.append(random.choice(turns))
+            usedmoves1.append(randmoves1)
+            moves.remove(randmoves1)
+            moves.append(usedmoves[-1])
+
+    return "".join(scramble)
