@@ -1,5 +1,4 @@
-from pycubescrambler import nxn,side,bld
-
+from pycubescrambler import nxn,side,non
 #gets 1x1 scramble and prints it out
 scramble=nxn.get1()
 print(scramble)
@@ -32,8 +31,12 @@ print(scramble)
 scramble=nxn.get_big_cube(100)
 print(scramble)
 
+#gets a big cube blind scramble of size 100 (100x100)
+scramble=nxn.get_big_cube(100,"bld")
+print(scramble)
+
 #gets fmc scramble and prints it out
-scramble=nxn.get_fmc()
+scramble=nxn.get3("fmc")
 print(scramble)
 
 #gets skewb scramble and prints it out
@@ -53,13 +56,29 @@ scramble=side.get_mega()
 print(scramble)
 
 #gets 3bld scramble and prints it out
-scramble=bld.get3()
+scramble=nxn.get3("bld")
 print(scramble)
 
 #gets 4bld scramble and prints it out
-scramble=bld.get4()
+scramble=nxn.get4("bld")
 print(scramble)
 
 #gets 5bld scramble and prints it out
-scramble=bld.get5()
+scramble=bld.get5("bld")
+print(scramble)
+
+#gets kilominx scramble
+scramble=non.get_kilo()
+print(scramble)
+
+#gts 1x1x3 scramble
+scramble=non.get113()
+print(scramble)
+
+#gets 2x2x3 scramble
+scramble=non.get223()
+print(scramble)
+
+#gets redi scramble
+scramble=non.get_redi()
 print(scramble)
