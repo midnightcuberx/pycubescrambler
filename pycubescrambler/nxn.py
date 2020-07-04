@@ -111,44 +111,10 @@ class main():
         scramble.append(random.choice(turns))
         moves.remove(randmoves1)
         moves.append(usedmoves[-1])
-    return "".join(scramble)
+    return scramble
 
-def get_fmc():
-  a=main.get3()
-  a="".join(a).split()
-  print(a)
-  list1=["F","F2","F'","B'","B2","B"]
-  list2=["R2","R","R'","L","L'","L2"]
-  list3=["F","F2","F'"]
-  list4=["R2","R","R'"]
-  times=0
-  while (a[0] in list1 and a[1] in list1) or (a[0] in list3) or (a[-1] in list2 and a[-2] in list2) or (a[-1] in list4):
-    if times>3:
-      a=main.get3()
-      a="".join(a).split()
-      times=0
 
-    if a[0] in list3:
-      a.remove(a[0])
-      times+=1
 
-    if (a[0] in list1 and a[1] in list1):
-      if a[0] not in list3:
-        a.remove(a[1])
-        times+=1
-
-    
-    if a[-1] in list4:
-      a.remove(a[-1])
-      times+=1
-    
-    if (a[-1] in list2 and a[-2] in list2):
-      if a[-1] not in list4:
-        a.remove(a[-2])
-        times+=1
-
-  scramble="R' U' F " + " ".join(a) + " R' U' F"
-  return scramble
 
 def get1():
   moves = ["x","y","z"]
@@ -183,11 +149,12 @@ def get1():
 
 def get2(): 
   moves = ["F","R","U"]
-  turns = [" ","2 ","' ","2 "]
+  turns = [" ","2 ","' "]
   scramble = []
   usedmoves=[]
   usedmoves1=[]
-  for i in range(10):
+  num=random.randint(8,12)
+  for i in range(num):
                 
       if i % 2 ==0:
                         
@@ -209,12 +176,59 @@ def get2():
         moves.append(usedmoves[-1])
   return "".join(scramble)
 
-def get3():
-  scramble=main.get3()
-  scramble="".join(scramble)
-  return scramble
+def get3(scramtype="3x3"):
+  a=main.get3()
+  scramtype=scramtype.lower()
+  if scramtype=="3x3":
+    return "".join(a)
+  elif scramtype=="bld":
+    scramble=[]
+    scramble3=a
+    for item in scramble3:
+      scramble.append(item)
+    possi=["","Rw ","Rw' ","Rw2 ","Fw ","Fw2 ","Fw' "]
+    possi2=["Uw","Uw'","Uw2",""]
+    scramble.append(random.choice(possi))
+    scramble.append(random.choice(possi2))
+    return "".join(scramble)
+  elif scramtype=="fmc":
+    a="".join(a).split()
+    list1=["F","F2","F'","B'","B2","B"]
+    list2=["R2","R","R'","L","L'","L2"]
+    list3=["F","F2","F'"]
+    list4=["R2","R","R'"]
+    times=0
+    while (a[0] in list1 and a[1] in list1) or (a[0] in list3) or (a[-1] in list2 and a[-2] in list2) or (a[-1] in list4):
+      if times>3:
+        a=main.get3()
+        a="".join(a).split()
+        times=0
 
-def get4():
+      if a[0] in list3:
+        a.remove(a[0])
+        times+=1
+
+      if (a[0] in list1 and a[1] in list1):
+        if a[0] not in list3:
+          a.remove(a[1])
+          times+=1
+
+      
+      if a[-1] in list4:
+        a.remove(a[-1])
+        times+=1
+      
+      if (a[-1] in list2 and a[-2] in list2):
+        if a[-1] not in list4:
+          a.remove(a[-2])
+          times+=1
+
+    scramble="R' U' F " + " ".join(a) + " R' U' F"
+    return scramble
+
+
+
+def get4(scramtype="4x4"):
   moves=["F","B","R","L","U","D"]
   wide_turns=["F","Fw","B","R","Rw","L","D","U","Uw"]
   turns = [" ","2 ","' ","2 "]
@@ -257,40 +271,55 @@ def get4():
       scramble.append(random.choice(turns))
       wide_turns.remove(randmoves1)
       wide_turns.append(usedmoves[-1])
-  return "".join(scramble)
+  if scramtype=="4x4":
+    return "".join(scramble)
+  elif scramtype=="bld":
+    possi=["","x ","x' ","x2 ","z ","z2 ","z' "]
+    possi2=["y","y'","y2",""]
+    scramble.append(random.choice(possi))
+    scramble.append(random.choice(possi2))
+    return "".join(scramble)
 
-def get5():
+def get5(scramtype="5x5"):
   scramble=main.big(5)
-  return scramble
+  if scramtype=="5x5":
+    return "".join(scramble)
+  elif scramtype=="bld":
+    possi=["","3Rw ","3Rw' ","3Rw2 ","3Fw ","3Fw2 ","3Fw' "]
+    possi2=["3Uw","3Uw'","3Uw2",""]
+    scramble.append(random.choice(possi))
+    scramble.append(random.choice(possi2))
+    return "".join(scramble)
+
 
 def get6():
   scramble=main.big(6)
-  return scramble
+  return "".join(scramble)
 
 def get7():
   scramble=main.big(7)
-  return scramble
+  return "".join(scramble)
 
 def get8():
   scramble=main.big(8)
-  return scramble
+  return "".join(scramble)
 
 def get9():
   scramble=main.big(9)
-  return scramble
+  return "".join(scramble)
 
 def get10():
   scramble=main.big(10)
-  return scramble
+  return "".join(scramble)
 
 def get11():
   scramble=main.big(11)
-  return scramble
+  return "".join(scramble)
 
 def get12():
   scramble=main.big(12)
-  return scramble
+  return "".join(scramble)
 
 def get_big_cube(n=12):
   scramble=main.big(n)
-  return scramble
+  return "".join(scramble)
