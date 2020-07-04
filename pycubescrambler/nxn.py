@@ -37,7 +37,7 @@ class main():
         moves.append(usedmoves[-1])	
     return scramble
     
-  def big(n):
+  def big(n=12,scramtype="big"):
     moves = ["F","B","R","L","U","D","Uw","Dw","Fw","Bw","Rw","Lw"]
     turns = [" ","2 ","' "]
     moveslist = ["F","B","R","L","U","D"]
@@ -111,10 +111,28 @@ class main():
         scramble.append(random.choice(turns))
         moves.remove(randmoves1)
         moves.append(usedmoves[-1])
-    return scramble
-
-
-
+    if scramtype=="big":
+      return "".join(scramble)
+    elif scramtype=="bld":
+      biggest=int(n/2)+1
+      possi=[]
+      possi2=[]
+      if biggest % 2==0:
+        possi=["","x ","x' ","x2 ","z ","z2 ","z' "]
+        possi2=["y","y'","y2",""]
+      else:
+        for move in ruf:
+          if move !="U":
+            possi.append(f"{biggest}{move}w ")
+            possi.append(f"{biggest}{move}w' ")
+            possi.append(f"{biggest}{move}w2 ")
+          else:
+            possi2.append(f"{biggest}{move}w ")
+            possi2.append(f"{biggest}{move}w' ")
+            possi2.append(f"{biggest}{move}w2 ")
+      scramble.append(random.choice(possi))
+      scramble.append(random.choice(possi2))
+      return "".join(scramble)
 
 def get1():
   moves = ["x","y","z"]
@@ -281,15 +299,12 @@ def get4(scramtype="4x4"):
     return "".join(scramble)
 
 def get5(scramtype="5x5"):
-  scramble=main.big(5)
+
   if scramtype=="5x5":
-    return "".join(scramble)
+    scramble=main.big(5)
   elif scramtype=="bld":
-    possi=["","3Rw ","3Rw' ","3Rw2 ","3Fw ","3Fw2 ","3Fw' "]
-    possi2=["3Uw","3Uw'","3Uw2",""]
-    scramble.append(random.choice(possi))
-    scramble.append(random.choice(possi2))
-    return "".join(scramble)
+    scramble=main.big(5,"bld")
+  return scramble
 
 
 def get6():
@@ -320,6 +335,6 @@ def get12():
   scramble=main.big(12)
   return "".join(scramble)
 
-def get_big_cube(n=12):
-  scramble=main.big(n)
+def get_big_cube(n=12,scramtype="big"):
+  scramble=main.big(n,scramtype)
   return "".join(scramble)
