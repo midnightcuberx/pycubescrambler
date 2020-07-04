@@ -50,21 +50,20 @@ class main():
     list3=["F","B","Fw","Bw"]
     n1=int(n/2)
     if n% 2==0:
-        times=int(n/2)
+      times=int(n/2)
+      for ru in ruf:
+
+        moves.append(f"{n1}{ru}w")
+        if ru=="R":
+          list2.append(f"{n1}{ru}w")
+        elif ru=="U":
+          list1.append(f"{n1}{ru}w")
+        elif ru=="F":
+          list3.append(f"{n1}{ru}w")
+
     else:
         times=int(n/2)+1
     for i in range(3,times):
-      if n % 2==0:
-          for ru in ruf:
-
-              moves.append(f"{n1}{ru}w")
-              if ru=="R":
-                  list2.append(f"{n1}{ru}w")
-              elif ru=="U":
-                  list1.append(f"{n1}{ru}w")
-              elif ru=="F":
-                  list3.append(f"{n1}{ru}w")
-
       for move in moveslist:
           moves.append(f"{i}{move}w")
           if move=="U" or move=="D":
@@ -77,6 +76,7 @@ class main():
       num=n*20-40
     else:
       num=n*15
+    print(moves)
     for i in range(num):
 
       if i % 2 ==0:
