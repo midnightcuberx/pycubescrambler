@@ -48,7 +48,10 @@ class main():
     list1=["U","D","Uw","Dw"]
     list2=["R","L","Lw","Rw"]
     list3=["F","B","Fw","Bw"]
-    n1=int(n/2)
+    try:
+      n1=int(n/2)
+    except TypeError:
+      raise TypeError("Invalid number")
     if n% 2==0:
       times=int(n/2)
       for ru in ruf:
@@ -76,7 +79,6 @@ class main():
       num=n*20-40
     else:
       num=n*15
-    print(moves)
     for i in range(num):
 
       if i % 2 ==0:
@@ -133,7 +135,8 @@ class main():
       scramble.append(random.choice(possi))
       scramble.append(random.choice(possi2))
       return "".join(scramble)
-
+    else:
+      raise ValueError("Invalid scramble type")
 def get1():
   moves = ["x","y","z"]
   turns = [" ","2 ","' "]
@@ -243,7 +246,8 @@ def get3(scramtype="3x3"):
 
     scramble="R' U' F " + " ".join(a) + " R' U' F"
     return scramble
-
+  else:
+    raise ValueError("Invalid scramble type")
 
 
 def get4(scramtype="4x4"):
@@ -297,6 +301,8 @@ def get4(scramtype="4x4"):
     scramble.append(random.choice(possi))
     scramble.append(random.choice(possi2))
     return "".join(scramble)
+  else:
+    raise ValueError("Invalid scramble type")
 
 def get5(scramtype="5x5"):
 
@@ -304,6 +310,8 @@ def get5(scramtype="5x5"):
     scramble=main.big(5)
   elif scramtype=="bld":
     scramble=main.big(5,"bld")
+  else:
+    raise ValueError("Invalid scramble type")
   return scramble
 
 
