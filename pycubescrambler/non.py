@@ -121,3 +121,64 @@ def get113():
             moves.append(usedmoves[-1])
 
     return "".join(scramble)
+
+def get_masterpyra():
+    num_moves = random.randint(38, 42)
+    moves = ["R", "L", "U", "B", "Uw", "Lw", "Bw", "Rw"]
+    turns = [" ", "' "]
+    list1 = ["U", "Uw"]
+    list2 = ["L", "Lw"]
+    list3 = ["R", "Rw"]
+    list4 = ["B", "Bw"]
+    scramble = []
+    usedmoves = []
+    usedmoves1 = []
+
+    def sort_tips():
+
+        tips = ['u', 'b', 'r', 'l']
+        tip = []
+
+        for x in range(4):
+            number = random.randint(1, 2)
+            if number == 1:
+                tip.append(tips[x])
+                tip.append(random.choice(turns))
+
+        return "".join(tip)
+
+    for i in range(num_moves):
+
+        if i % 2 == 0:
+            randmoves = random.choice(moves)
+            if i > 1:
+
+                while (randmoves in list1 and scramble[-2] in list1) or (randmoves in list2 and scramble[-2] in list2) \
+                        or (randmoves in list3 and scramble[-2] in list3) or (randmoves in list4 and scramble[-2] in
+                                                                              list4):
+                    randmoves = random.choice(moves)
+
+            usedmoves.append(randmoves)
+            scramble.append(randmoves)
+            scramble.append(random.choice(turns))
+            moves.remove(randmoves)
+            if i != 0:
+                moves.append(usedmoves1[-1])
+
+        else:
+            randmoves1 = random.choice(moves)
+            if i > 1:
+
+                while (randmoves1 in list1 and scramble[-2] in list1) or (randmoves1 in list2 and scramble[-2] in list2)\
+                        or (randmoves1 in list3 and scramble[-2] in list3) or (randmoves1 in list4 and scramble[-2] in list4):
+                    randmoves1 = random.choice(moves)
+            scramble.append(randmoves1)
+            usedmoves1.append(randmoves1)
+            scramble.append(random.choice(turns))
+            moves.remove(randmoves1)
+            moves.append(usedmoves[-1])
+
+    thetips = sort_tips()
+    scramble.append(thetips)
+    return "".join(scramble)
+
