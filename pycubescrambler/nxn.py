@@ -317,32 +317,32 @@ def get5(scramtype="5x5"):
 
 def get6():
   scramble=main.big(6)
-  return "".join(scramble)
+  return scramble
 
 def get7():
   scramble=main.big(7)
-  return "".join(scramble)
+  return scramble
 
 def get8():
   scramble=main.big(8)
-  return "".join(scramble)
+  return scramble
 
 def get9():
   scramble=main.big(9)
-  return "".join(scramble)
+  return scramble
 
 def get10():
   scramble=main.big(10)
-  return "".join(scramble)
+  return scramble
 
 def get11():
   scramble=main.big(11)
-  return "".join(scramble)
+  return scramble
 
 def get12():
   scramble=main.big(12)
-  return "".join(scramble)
+  return scramble
 
 def get_big_cube(n=12,scramtype="big"):
   scramble=main.big(n,scramtype)
-  return "".join(scramble)
+  return scramble
