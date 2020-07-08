@@ -182,3 +182,36 @@ def get_masterpyra():
     scramble.append(thetips)
     return "".join(scramble)
 
+def get233():
+    scramble = []
+    usedmoves = []
+    usedmoves1 = []
+    moves = ["R2 ", "L2 ", "F2 ", "B2 ", "U"]
+    turns = [" ", "' ", "2 "]
+
+    for i in range(25):
+        if i % 2 == 0:
+
+            randmove = random.choice(moves)
+            scramble.append(randmove)
+            usedmoves.append(randmove)
+
+            if randmove == "U":
+                scramble.append(random.choice(turns))
+
+            moves.remove(randmove)
+
+            if i != 0:
+                moves.append(usedmoves1[-1])
+
+        else:
+            randmove1 = random.choice(moves)
+            scramble.append(randmove1)
+            usedmoves1.append(randmove1)
+            moves.remove(randmove1)
+            moves.append(usedmoves[-1])
+
+            if randmove1 == "U":
+                scramble.append(random.choice(turns))
+
+    return "".join(scramble)
