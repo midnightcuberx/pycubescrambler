@@ -15,7 +15,7 @@ with open(path.join(curr_dir, 'js/mathlib.js')) as f:
 with open(path.join(curr_dir, 'js/scramble.js')) as f:
     scramble = f.read()
 
-with open(path.join(curr_dir, 'js/scramble_sq1.js')) as f:
+with open(path.join(curr_dir, 'js/sq1.js')) as f:
     sq1 = f.read()
 
 sq1scrambler   = execjs.compile(mathlib + scramble + sq1)
