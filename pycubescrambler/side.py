@@ -1,9 +1,5 @@
 import random
 from . import joinscramble
-from pyTwistyScrambler import squareOneScrambler as sq1
-
-def get_squan():
-  return sq1.get_WCA_scramble()
 
 @joinscramble("")
 def get_clock():
