@@ -1,10 +1,11 @@
 import random
-from . import sq1scrambler, trim
+from . import joinscramble
+from pyTwistyScrambler import squareOneScrambler as sq1
 
-@trim
 def get_squan():
-    return sq1scrambler.call("sql_scrambler.getRandomScramble")
+  return sq1.get_WCA_scramble()
 
+@joinscramble
 def get_clock():
   moves = ["0+ ","1+ ","2+ ","3+ ","4+ ","5+ ","6+ ","1- ","2- ","3- ","4- ","5- "]
   pins = ["UR","DR","DL","UL","U","R","D","L","ALL","U","R","D","L","ALL"]
@@ -14,6 +15,7 @@ def get_clock():
       scramble.append(pins[i])
       scramble.append(random.choice(moves))
 
+  @joinscramble
   def sort_l4m():
     l4m=["UR ","DR ","DL ","UL "]
     l4ms=[]
@@ -21,14 +23,14 @@ def get_clock():
       number=random.randint(1,2)
       if number==1:
         l4ms.append(l4m[i])
-    return "".join(l4ms)
+    return l4ms
 
   last4=sort_l4m()
   scramble.append(last4)
 
-  return "".join(scramble)
+  return scramble
 
-
+@joinscramble
 def get_skewb():
   y=random.randint(8,10)
   moves = ["B","R","L","U"]
@@ -56,7 +58,8 @@ def get_skewb():
         scramble.append(random.choice(turns))
         moves.remove(randmoves1)
         moves.append(usedmoves[-1])
-  return "".join(scramble)
+  return scramble
+
 
 def get_mega():
   turns=["-- ","++ "]
@@ -75,7 +78,7 @@ def get_mega():
     scramble.append("".join(scrambles))
   return "\n".join(scramble)
 
-
+@joinscramble
 def get_pyra():
   y=random.randint(8,10)
   moves = ["B","R","L","U"]
@@ -84,6 +87,7 @@ def get_pyra():
   usedmoves=[]
   usedmoves1=[]
 
+  @joinscramble
   def sort_tips():
 
     tips=["l","r","b","u"]
@@ -95,7 +99,7 @@ def get_pyra():
         tip.append(tips[i])
         tip.append(random.choice(turns))
 
-    return "".join(tip)
+    return tip
 
 
   for i in range(y):
@@ -121,4 +125,4 @@ def get_pyra():
 
   thetips=sort_tips()
   scramble.append(thetips)
-  return "".join(scramble)
+  return scramble
