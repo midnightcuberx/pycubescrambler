@@ -29,11 +29,13 @@ def bldify(n):
     return inner
   return stuff
 
-def joinscramble(func):
-  def inner(*args,**kwargs):
-    scramble=func(*args,**kwargs)
-    return "".join(scramble)
-  return inner
+def joinscramble(jointype):
+  def stuff(func):
+    def inner(*args,**kwargs):
+      scramble=func(*args,**kwargs)
+      return f"{jointype}".join(scramble)
+    return inner
+  return stuff
 
   #############################################################################
   #main scrambles that take up a lot of space or are used a lot
@@ -156,7 +158,7 @@ class main():
         scramble.append(random.choice(turns))
         moves.remove(randmoves1)
         moves.append(usedmoves[-1])
-      return scramble
+    return scramble
   
   ##############################################################
   #4x4
