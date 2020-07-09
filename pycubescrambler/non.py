@@ -1,5 +1,7 @@
 import random
+from . import joinscramble
 
+@joinscramble("")
 def get_ivy():
     moves = ["L", "R", 'D', 'B']
     turns= [' ', "' "]
@@ -27,9 +29,10 @@ def get_ivy():
             scramble.append(random.choice(turns))
             moves.remove(randmoves1)
             moves.append(usedmoves[-1])
-    return "".join(scramble)
+    return scramble
 
 
+@joinscramble("")
 def get223():
     num_moves = random.randint(8, 10)
     double_moves = ["R", "F"]
@@ -50,9 +53,9 @@ def get223():
             scramble.append(randmoves1)
             scramble.append(random.choice(turns))
 
-    return "".join(scramble)
+    return scramble
 
-
+@joinscramble("\n")
 def get_kilo():
   turns=["-- ","++ "]
   umoves=["U'","U"]
@@ -70,9 +73,10 @@ def get_kilo():
     if i!=3:
       scrambles.append(" x2 ")
     scramble.append("".join(scrambles))
-  return "\n".join(scramble)
+  return scramble
 
 
+@joinscramble("\n")
 def get_redi():
     turns = [" ", "' "]
     scramble = []
@@ -91,8 +95,9 @@ def get_redi():
             scrambles.append("x")
         scramble.append("".join(scrambles))
 
-    return "\n".join(scramble)
+    return scramble
 
+@joinscramble("")
 def get113():
     moves = ["B", "F", "R", "L"]
     turns = ["' ", " "]
@@ -120,8 +125,9 @@ def get113():
             moves.remove(randmoves1)
             moves.append(usedmoves[-1])
 
-    return "".join(scramble)
+    return scramble
 
+@joinscramble("")
 def get_masterpyra():
     num_moves = random.randint(38, 42)
     moves = ["R", "L", "U", "B", "Uw", "Lw", "Bw", "Rw"]
@@ -134,6 +140,7 @@ def get_masterpyra():
     usedmoves = []
     usedmoves1 = []
 
+    @joinscramble
     def sort_tips():
 
         tips = ['u', 'b', 'r', 'l']
@@ -145,7 +152,7 @@ def get_masterpyra():
                 tip.append(tips[x])
                 tip.append(random.choice(turns))
 
-        return "".join(tip)
+        return tip
 
     for i in range(num_moves):
 
@@ -180,8 +187,9 @@ def get_masterpyra():
 
     thetips = sort_tips()
     scramble.append(thetips)
-    return "".join(scramble)
+    return scramble
 
+@joinscramble("")
 def get233():
     scramble = []
     usedmoves = []
@@ -214,4 +222,4 @@ def get233():
             if randmove1 == "U":
                 scramble.append(random.choice(turns))
 
-    return "".join(scramble)
+    return scramble
