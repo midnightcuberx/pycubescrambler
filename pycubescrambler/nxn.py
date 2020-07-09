@@ -1,12 +1,7 @@
 import random
 from . import main, joinscramble,bldify
 
-@joinscramble
-def big(n):
-  scramble=main.big(n)
-  return scramble
-
-@joinscramble
+@joinscramble("")
 def get1():
   moves = ["x","y","z"]
   turns = [" ","2 ","' "]
@@ -35,7 +30,7 @@ def get1():
         moves.append(usedmoves[-1])
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get2(): 
   moves = ["F","R","U"]
   turns = [" ","2 ","' "]
@@ -65,7 +60,7 @@ def get2():
         moves.append(usedmoves[-1])
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get3(scramtype="3x3"):
   def get3():
     scramble=main.get3()
@@ -122,10 +117,10 @@ def get3(scramtype="3x3"):
     return fmc()
   
   else:
-    raise valueError("That type of scramble does not exist")
+    raise ValueError("That type of scramble does not exist")
 
 
-@joinscramble
+@joinscramble("")
 def get4(scramtype="4x4"):
   def get4():
     scramble=main.get4()
@@ -143,9 +138,9 @@ def get4(scramtype="4x4"):
     return get4bld()
 
   else:
-    raise valueError("That type of scramble does not exist")
+    raise ValueError("That type of scramble does not exist")
 
-@joinscramble
+@joinscramble("")
 def get5(scramtype="5x5"):
   def get5():
     scramble=main.get5()
@@ -163,45 +158,45 @@ def get5(scramtype="5x5"):
     return get5bld()
 
   else:
-    raise valueError("That type of scramble does not exist")
+    raise ValueError("That type of scramble does not exist")
 
 
-@joinscramble
+@joinscramble("")
 def get6():
   scramble=main.big(6)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get7():
   scramble=main.big(7)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get8():
   scramble=main.big(8)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get9():
   scramble=main.big(9)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get10():
   scramble=main.big(10)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get11():
   scramble=main.big(11)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get12():
   scramble=main.big(12)
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get_big_cube(n=12,scramtype="big"):
   def big():
     scramble=main.big(n)
@@ -219,4 +214,4 @@ def get_big_cube(n=12,scramtype="big"):
     return bld()
 
   else:
-    raise valueError("That type of scramble does not exist")
+    raise ValueError("That type of scramble does not exist")
