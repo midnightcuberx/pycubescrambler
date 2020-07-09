@@ -5,7 +5,7 @@ from pyTwistyScrambler import squareOneScrambler as sq1
 def get_squan():
   return sq1.get_WCA_scramble()
 
-@joinscramble
+@joinscramble("")
 def get_clock():
   moves = ["0+ ","1+ ","2+ ","3+ ","4+ ","5+ ","6+ ","1- ","2- ","3- ","4- ","5- "]
   pins = ["UR","DR","DL","UL","U","R","D","L","ALL","U","R","D","L","ALL"]
@@ -15,7 +15,7 @@ def get_clock():
       scramble.append(pins[i])
       scramble.append(random.choice(moves))
 
-  @joinscramble
+  @joinscramble("")
   def sort_l4m():
     l4m=["UR ","DR ","DL ","UL "]
     l4ms=[]
@@ -30,7 +30,7 @@ def get_clock():
 
   return scramble
 
-@joinscramble
+@joinscramble("")
 def get_skewb():
   y=random.randint(8,10)
   moves = ["B","R","L","U"]
@@ -60,7 +60,7 @@ def get_skewb():
         moves.append(usedmoves[-1])
   return scramble
 
-
+@joinscramble("\n")
 def get_mega():
   turns=["-- ","++ "]
   umoves=["U'","U"]
@@ -76,9 +76,9 @@ def get_mega():
         scrambles.append(random.choice(turns))
     scrambles.append(random.choice(umoves))
     scramble.append("".join(scrambles))
-  return "\n".join(scramble)
+  return scramble
 
-@joinscramble
+@joinscramble("")
 def get_pyra():
   y=random.randint(8,10)
   moves = ["B","R","L","U"]
@@ -87,7 +87,7 @@ def get_pyra():
   usedmoves=[]
   usedmoves1=[]
 
-  @joinscramble
+  @joinscramble("")
   def sort_tips():
 
     tips=["l","r","b","u"]
