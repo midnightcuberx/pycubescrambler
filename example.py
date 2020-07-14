@@ -82,3 +82,7 @@ print(scramble)
 #gets redi scramble
 scramble=non.get_redi()
 print(scramble)
+
+#gets masterpyra scramble
+scramble=non.get_masterpyra()
+print(scramble)
