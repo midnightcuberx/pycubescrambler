@@ -1,1 +1,2 @@
-Check example.py for examples. Thanks to cstimer for the scramble code for square-1 and euwphes for the basis of the sq1 code.
+#pycubescrambler
+#A scrambling module that egenerates scrambles for all sorts of wca and non wca puzzles. Check example.py for examples.
