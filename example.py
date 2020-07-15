@@ -71,8 +71,8 @@ print(scramble)
 scramble=non.get_kilo()
 print(scramble)
 
-#gts 1x1x3 scramble
-scramble=non.get113()
+#gts 1x3x3 scramble
+scramble=non.get133()
 print(scramble)
 
 #gets 2x2x3 scramble
