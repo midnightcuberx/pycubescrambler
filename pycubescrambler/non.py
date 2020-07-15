@@ -98,17 +98,21 @@ def get_redi():
     return scramble
 
 @joinscramble("")
-def get113():
+def get133():
     moves = ["B", "F", "R", "L"]
     turns = ["' ", " "]
     usedmoves = []
     usedmoves1 = []
     num_moves = random.randint(3, 6)
     scramble = []
-
+    list1=["F","B"]	
+    list2=["R","L"]	
     for i in range(num_moves):
         if i % 2 == 0:
             randmoves = random.choice(moves)
+            if i>1:                   	
+              while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2):	
+                randmoves=random.choice(moves)    
             scramble.append(randmoves)
             scramble.append(random.choice(turns))
             usedmoves.append(randmoves)
@@ -119,6 +123,9 @@ def get113():
 
         else:
             randmoves1 = random.choice(moves)
+            if i>1:	
+              while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2):
+                randmoves1=random.choice(moves) 
             scramble.append(randmoves1)
             scramble.append(random.choice(turns))
             usedmoves1.append(randmoves1)
