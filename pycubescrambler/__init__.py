@@ -41,41 +41,36 @@ def joinscramble(jointype):
   #main scrambles that take up a lot of space or are used a lot
 
 class main():
-  def get3():	
+def get3():	
+
     moves = ["F","B","R","L","U","D"]	
     turns = [" ","2 ","' ","2 "]	
     scramble = []	
-    usedmoves=[]	
-    usedmoves1=[]	
     list1=["F","B"]	
     list2=["R","L"]	
     list3=["D","U"]	
-    for i in range(20):	
+    num=random.randint(18,22)
 
-      if i % 2 ==0:	
-        randmoves=random.choice(moves)	
-        if i>1:                   	
-          while (randmoves in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves in list3 and scramble[-2] in list3 and scramble[-4] in list3):	
-            randmoves=random.choice(moves)     	
-        usedmoves.append(randmoves)	
-        scramble.append(randmoves)	
-        scramble.append(random.choice(turns))	
-        moves.remove(randmoves)	
-        if i != 0:	
-          moves.append(usedmoves1[-1])	
+    for i in range(num):	
+      loop=True
+      while loop is True:
+        move=random.choice(moves)
+        if i>1:
+          if (move in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (move in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (move in list3 and scramble[-2] in list3 and scramble[-4] in list3) or move==scramble[-2]:
+            loop=True
+          else:
+            loop=False
+        elif i==1:
+          if scramble[-2]==move:
+            loop=True
+          else:
+            loop=False
+        else:
+          loop=False
+      turn=random.choice(turns)
+      scramble.append(move)
+      scramble.append(turn)
 
-      else:	
-
-        randmoves1=random.choice(moves)	
-        if i>1:	
-          while (randmoves1 in list1 and scramble[-2] in list1 and scramble[-4] in list1) or (randmoves1 in list2 and scramble[-2] in list2 and scramble[-4] in list2) or (randmoves1 in list3 and scramble[-2] in list3 and scramble[-4] in list3):	
-            randmoves1=random.choice(moves) 	
-
-        scramble.append(randmoves1)	
-        usedmoves1.append(randmoves1)	
-        scramble.append(random.choice(turns))	
-        moves.remove(randmoves1)	
-        moves.append(usedmoves[-1])	
     return scramble
 
 
