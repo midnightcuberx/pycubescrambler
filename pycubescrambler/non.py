@@ -103,7 +103,7 @@ def get133():
     turns = ["' ", " "]
     usedmoves = []
     usedmoves1 = []
-    num_moves = random.randint(3, 6)
+    num_moves = random.randint(5, 10)
     scramble = []
     list1=["F","B"]	
     list2=["R","L"]	
