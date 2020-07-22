@@ -143,12 +143,12 @@ def get4(scramtype="4x4"):
 @joinscramble("")
 def get5(scramtype="5x5"):
   def get5():
-    scramble=main.get5()
+    scramble=main.big(5)
     return scramble
   
   @bldify(5)
   def get5bld():
-    scramble=main.get5()
+    scramble=main.big(5)
     return scramble
 
   if scramtype=="5x5":
