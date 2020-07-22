@@ -147,7 +147,7 @@ def get_masterpyra():
     usedmoves = []
     usedmoves1 = []
 
-    @joinscramble
+    @joinscramble("")
     def sort_tips():
 
         tips = ['u', 'b', 'r', 'l']
